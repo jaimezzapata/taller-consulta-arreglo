@@ -210,4 +210,5 @@ const nums = [1, 2, 3, 4];
 const suma = nums.reduce((acc, val) => acc + val, 0);
 console.log(suma); // 10
 console.log(nums); // [1, 2, 3, 4]
+
  */

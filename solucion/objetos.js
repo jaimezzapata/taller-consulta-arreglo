@@ -34,6 +34,7 @@
 
 // Muestra el objeto `computador` en la consola.
 
+
 /**  console.log(computador) */ 
 
 
