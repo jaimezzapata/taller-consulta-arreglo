@@ -27,8 +27,19 @@ console.log("Objeto literal básico:", miObjetoLiteral);
 // 3. Crea un objeto literal llamado `computador` con 5 propiedades.
 // Escribe el código aquí
 
+const computador = {
+  marca: "Lenovo", // string
+  ram: 16,         // number
+  esPortatil: true, // boolean
+  perifericos: ["mouse", "teclado"], // array
+  procesador: {    // objeto anidado
+    marca: "Intel",
+    nucleos: 8
+  }
+};
 
 // Muestra el objeto `computador` en la consola.
+console.log("Objeto computador:", computador);
 
 
 // Investigación #2: Objeto por Constructor
@@ -41,25 +52,36 @@ console.log("Objeto literal básico:", miObjetoLiteral);
 // 2. Crea un objeto utilizando el constructor `new Object()` y asígnale las mismas propiedades del objeto `computador`.
 // Escribe el código aquí
 
-// Asigna las propiedades aquí
-
+// Usando new Object()
+const computador2 = new Object();
+computador2.marca = "Lenovo";
+computador2.ram = 16;
+computador2.esPortatil = true;
+computador2.perifericos = ["mouse", "teclado"];
+computador2.procesador = { marca: "Intel", nucleos: 8 };
 
 // Muestra el objeto `computadorPorConstructor` en la consola.
+console.log("Objeto computador (por constructor):", computador2);
 
 
 // 3. Crea una función constructora llamada `Producto` y crea dos instancias.
 // Escribe la función constructora aquí
 
+function Producto(nombre, precio, disponible) {
+  this.nombre = nombre;
+  this.precio = precio;
+  this.disponible = disponible;
+}
 
 // Crea dos instancias de `Producto`
 // Escribe el código aquí
 
+const prod1 = new Producto("Mouse", 50, true);
+const prod2 = new Producto("Teclado", 100, false);
 
 // Muestra las instancias en la consola
-// console.log("Instancia 1 de Producto:", producto1);
-// console.log("Instancia 2 de Producto:", producto2);
-
-
+console.log("Instancia 1 de Producto:", prod1);
+console.log("Instancia 2 de Producto:", prod2);
 
 
 
@@ -75,48 +97,59 @@ const playlistInicial = [
     { titulo: "Stairway to Heaven", artista: "Led Zeppelin", duracion: 482 },
 ];
 
-// 1. Añadir una nueva canción al FINAL de la playlist.
-//    Utiliza un método mutable.
-//    Canción a añadir: { titulo: "Livin' on a Prayer", artista: "Bon Jovi", duracion: 249 }
-console.log("\n1. Añadir canción al final:");
-
-// El método .push() modifica el arreglo original, agregando la nueva canción al final.
-playlistInicial.push({ titulo: "Livin' on a Prayer", artista: "Bon Jovi", duracion: 249 });
+// 1. Añadir una nueva canción al FINAL de la playlist usando push (mutable)
+playlistInicial.push({ titulo: "Imagine", artista: "John Lennon", duracion: 183 });
 console.log(playlistInicial);
 
-// 2. Eliminar la PRIMERA canción de la playlist.
-//    Utiliza un método mutable.
-console.log("\n2. Eliminar primera canción:");
-
-// El método .shift() remueve el primer elemento del arreglo, modificando el original.
+// 2. Eliminar la PRIMERA canción usando shift (mutable)
 playlistInicial.shift();
 console.log(playlistInicial);
 
-// 3. Crear una NUEVA playlist que contenga solo los títulos de las canciones.
-//    Utiliza un método inmutable. El arreglo original no debe cambiar.
-console.log("\n3. Crear playlist solo con títulos:");
+// 3. Crear una NUEVA playlist solo con títulos (inmutable, usando map)
+const soloTitulos = playlistInicial.map(cancion => cancion.titulo);
+console.log(soloTitulos);
 
-// El método .map() crea un nuevo arreglo con los resultados de la función aplicada a cada elemento.
-const playlistTitulos = playlistInicial.map(cancion => cancion.titulo);
-console.log("Playlist original:");
-console.log(playlistInicial);
-console.log("Solo títulos:");
-console.log(playlistTitulos);
+// 4. Crear una NUEVA playlist con canciones de más de 400 segundos (inmutable, usando filter)
+const cancionesLargas = playlistInicial.filter(cancion => cancion.duracion > 400);
+console.log(cancionesLargas);
 
-
-// 4. Crear una NUEVA playlist que contenga solo las canciones que duren más de 400 segundos.
-//    Utiliza un método inmutable.
-console.log("\n4. Crear playlist con canciones largas:");
-
-// El método .filter() crea un nuevo arreglo con los elementos que cumplen la condición de la función.
-const playlistLargas = playlistInicial.filter(cancion => cancion.duracion > 400);
-console.log("Canciones largas (>400s):");
-console.log(playlistLargas);
-
-// 5. Encontrar la primera canción en la playlist que sea de "Eagles".
-//    Utiliza un método inmutable y muestra el objeto de la canción encontrada.
-console.log("\n5. Encontrar canción de Eagles:");
-
-// El método .find() retorna el primer elemento que cumple la condición, sin modificar el arreglo original.
+// 5. Encontrar la primera canción de "Eagles" (inmutable, usando find)
 const cancionEagles = playlistInicial.find(cancion => cancion.artista === "Eagles");
 console.log(cancionEagles);
+
+// --- ¿QUÉ ES UN ARREGLO? ---
+// Un arreglo es una estructura que almacena varios valores en una sola variable.
+const ejemplo = [1, "texto", true, {a:1}, [2,3]]; // Puede contener cualquier tipo de dato
+
+// --- MÉTODOS MUTABLES ---
+// push: agrega al final
+let arr = [1,2];
+arr.push(3); // arr ahora es [1,2,3]
+
+// pop: elimina el último
+arr.pop(); // arr ahora es [1,2]
+
+// shift: elimina el primero
+arr.shift(); // arr ahora es [2]
+
+// unshift: agrega al inicio
+arr.unshift(0); // arr ahora es [0,2]
+
+// splice: agrega o elimina en cualquier posición
+arr.splice(1,0,1.5); // arr ahora es [0,1.5,2]
+
+// --- MÉTODOS INMUTABLES ---
+// map: crea un nuevo arreglo transformando cada elemento
+const dobles = arr.map(x => x*2); // arr no cambia
+
+// filter: crea un nuevo arreglo con los que cumplen condición
+const mayores = arr.filter(x => x > 1);
+
+// slice: copia una parte
+const copia = arr.slice(0,2);
+
+// concat: une arreglos
+const unido = arr.concat([3,4]);
+
+// find: busca el primer elemento que cumple condición
+const encontrado = arr.find(x => x > 1);
