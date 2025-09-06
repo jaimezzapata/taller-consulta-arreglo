@@ -6,80 +6,77 @@
 // Investigación #1: Objeto Literal
 // 1. Define qué es un objeto literal en JavaScript.
 /**
- * Escribe tu explicación aquí:
- * Un objeto literal es literalmente una de las formas más simples y comunes de crear objetos en JavaScript.
- * Se define directamente con una sintaxis de llaves `{}`.
- * Su propósito principal es agrupar un conjunto de datos y funcionalidades relacionadas en una sola entidad, usando pares de 'clave-valor' (key-value) para representar las propiedades y los métodos.
- * Es ideal para crear un único objeto de forma rápida y sencilla.
+ * Un objeto literal es una de las formas más simples y directas de crear objetos en JavaScript.
+ * Se define usando llaves {} y permite agrupar datos y comportamientos relacionados en una sola entidad.
+ * Su propósito principal es representar un solo objeto con propiedades y métodos definidos explícitamente.
+ * Es ideal para crear objetos únicos de manera rápida y sencilla.
  */
 
 // 2. Muestra la sintaxis básica para crear un objeto literal.
 // Escribe el código aquí
 
-// Un objeto literal se declara usando 'const', 'let' o 'var', seguido del nombre de la variable y llaves `{}` que contienen las propiedades.
-/*const objetoUnoLiteral = {
-    nombre: "Blindprogrammer",
-    edad: 30,
-    activo: true,
+// Un objeto literal se declara usando 'const', 'let' o 'var', seguido del nombre de la variable y llaves {} que contienen las propiedades.
+const objetoUnoLiteral = {
+  nombre: "EjemploUsuario", // string: nombre de la persona
+  edad: 25,                 // number: edad de la persona
+  activo: true              // boolean: si está activo o no
 };
-console.log("Objeto literal básico:", miObjetoLiteral);
+console.log("Objeto literal básico:", objetoUnoLiteral);
 
 // 3. Crea un objeto literal llamado `computador` con 5 propiedades.
 // Escribe el código aquí
 
+// Creamos un objeto literal llamado 'computador' que representa un computador real
 const computador = {
-  marca: "Lenovo", // string
-  ram: 16,         // number
-  esPortatil: true, // boolean
-  perifericos: ["mouse", "teclado"], // array
-  procesador: {    // objeto anidado
-    marca: "Intel",
-    nucleos: 8
+  marca: "Lenovo", // string: marca del computador
+  ram: 16,         // number: cantidad de memoria RAM en GB
+  esPortatil: true, // boolean: indica si es portátil
+  perifericos: ["mouse", "teclado"], // array: lista de periféricos conectados
+  procesador: {    // objeto anidado: información del procesador
+    marca: "Intel", // string: marca del procesador
+    nucleos: 8      // number: cantidad de núcleos
   }
 };
-
-// Muestra el objeto `computador` en la consola.
+// Mostramos el objeto computador en la consola
 console.log("Objeto computador:", computador);
 
 
 // Investigación #2: Objeto por Constructor
 // 1. Define qué es un objeto por constructor y su diferencia con el literal.
 /**
- * Escribe tu explicación aquí:
- * Un objeto por constructor es...
+ * Un objeto por constructor es un objeto creado usando una función constructora o el constructor Object().
+ * A diferencia del objeto literal, permite crear múltiples instancias con la misma estructura.
+ * Es útil cuando necesitamos crear varios objetos similares de manera eficiente.
  */
 
 // 2. Crea un objeto utilizando el constructor `new Object()` y asígnale las mismas propiedades del objeto `computador`.
 // Escribe el código aquí
 
 // Usando new Object()
+// Creamos un objeto usando el constructor 'new Object()' y le asignamos las mismas propiedades que el objeto computador
 const computador2 = new Object();
-computador2.marca = "Lenovo";
-computador2.ram = 16;
-computador2.esPortatil = true;
-computador2.perifericos = ["mouse", "teclado"];
-computador2.procesador = { marca: "Intel", nucleos: 8 };
-
-// Muestra el objeto `computadorPorConstructor` en la consola.
+computador2.marca = "Lenovo"; // string
+computador2.ram = 16; // number
+computador2.esPortatil = true; // boolean
+computador2.perifericos = ["mouse", "teclado"]; // array
+computador2.procesador = { marca: "Intel", nucleos: 8 }; // objeto anidado
+// Mostramos el objeto computador2 en la consola
 console.log("Objeto computador (por constructor):", computador2);
 
 
 // 3. Crea una función constructora llamada `Producto` y crea dos instancias.
 // Escribe la función constructora aquí
 
+// Definimos una función constructora llamada Producto
 function Producto(nombre, precio, disponible) {
-  this.nombre = nombre;
-  this.precio = precio;
-  this.disponible = disponible;
+  this.nombre = nombre;      // string: nombre del producto
+  this.precio = precio;      // number: precio del producto
+  this.disponible = disponible; // boolean: si está disponible o no
 }
-
-// Crea dos instancias de `Producto`
-// Escribe el código aquí
-
-const prod1 = new Producto("Mouse", 50, true);
-const prod2 = new Producto("Teclado", 100, false);
-
-// Muestra las instancias en la consola
+// Creamos dos instancias de Producto usando la función constructora
+const prod1 = new Producto("Mouse", 50, true); // Producto disponible
+const prod2 = new Producto("Teclado", 100, false); // Producto no disponible
+// Mostramos las instancias en la consola
 console.log("Instancia 1 de Producto:", prod1);
 console.log("Instancia 2 de Producto:", prod2);
 
