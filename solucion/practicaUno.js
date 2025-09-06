@@ -8,31 +8,35 @@ const playlistInicial = [
 ];
 
 // 1. Añadir una nueva canción al FINAL de la playlist.
-//    Utiliza un método mutable.
-//    Canción a añadir: { titulo: "Imagine", artista: "John Lennon", duracion: 183 }
+//    Utiliza un método mutable (push agrega al final y modifica el arreglo original)
 console.log("\n1. Añadir canción al final:");
-// Escribe tu código aquí
+playlistInicial.push({ titulo: "Imagine", artista: "John Lennon", duracion: 183 });
+console.log("Playlist después de añadir:", playlistInicial);
 
 
 // 2. Eliminar la PRIMERA canción de la playlist.
-//    Utiliza un método mutable.
+//    Utiliza un método mutable (shift elimina el primer elemento)
 console.log("\n2. Eliminar primera canción:");
-// Escribe tu código aquí
+playlistInicial.shift();
+console.log("Playlist después de eliminar la primera:", playlistInicial);
 
 
 // 3. Crear una NUEVA playlist que contenga solo los títulos de las canciones.
-//    Utiliza un método inmutable. El arreglo original no debe cambiar.
+//    Utiliza un método inmutable (map crea un nuevo arreglo)
 console.log("\n3. Crear playlist solo con títulos:");
-// Escribe tu código aquí
+const soloTitulos = playlistInicial.map(cancion => cancion.titulo);
+console.log("Nueva playlist solo con títulos:", soloTitulos);
 
 
 // 4. Crear una NUEVA playlist que contenga solo las canciones que duren más de 400 segundos.
-//    Utiliza un método inmutable.
+//    Utiliza un método inmutable (filter crea un nuevo arreglo)
 console.log("\n4. Crear playlist con canciones largas:");
-// Escribe tu código aquí
+const cancionesLargas = playlistInicial.filter(cancion => cancion.duracion > 400);
+console.log("Nueva playlist con canciones largas:", cancionesLargas);
 
 
 // 5. Encontrar la primera canción en la playlist que sea de "Eagles".
-//    Utiliza un método inmutable y muestra el objeto de la canción encontrada.
+//    Utiliza un método inmutable (find retorna el primer elemento que cumple la condición)
 console.log("\n5. Encontrar canción de Eagles:");
-// Escribe tu código aquí
+const cancionEagles = playlistInicial.find(cancion => cancion.artista === "Eagles");
+console.log("Primera canción de Eagles encontrada:", cancionEagles);
