@@ -14,10 +14,21 @@ console.log("\n1. Añadir canción al final:");
 // Escribe tu código aquí
 
 
+/** 
+ playlistInicial.push({ titulo: "Imagine", artista: "John Lennon", duracion: 183 });
+console.log(playlistInicial);
+*/
+
 // 2. Eliminar la PRIMERA canción de la playlist.
 //    Utiliza un método mutable.
 console.log("\n2. Eliminar primera canción:");
 // Escribe tu código aquí
+
+/**
+playlistInicial.shift();
+console.log(playlistInicial);
+
+*/
 
 
 // 3. Crear una NUEVA playlist que contenga solo los títulos de las canciones.
@@ -25,14 +36,32 @@ console.log("\n2. Eliminar primera canción:");
 console.log("\n3. Crear playlist solo con títulos:");
 // Escribe tu código aquí
 
+/**
+ const playlistSoloTitulos = playlistInicial.map(cancion => cancion.titulo);
+console.log(playlistSoloTitulos);
+
+ */
 
 // 4. Crear una NUEVA playlist que contenga solo las canciones que duren más de 400 segundos.
 //    Utiliza un método inmutable.
 console.log("\n4. Crear playlist con canciones largas:");
 // Escribe tu código aquí
 
+/**
+ 
+const playlistLargas = playlistInicial.filter(cancion => cancion.duracion > 400);
+console.log(playlistLargas);
+
+ */
+
 
 // 5. Encontrar la primera canción en la playlist que sea de "Eagles".
 //    Utiliza un método inmutable y muestra el objeto de la canción encontrada.
 console.log("\n5. Encontrar canción de Eagles:");
 // Escribe tu código aquí
+
+/**
+ const cancionEagles = playlistInicial.find(cancion => cancion.artista === "Eagles");
+console.log(cancionEagles);
+
+ */
