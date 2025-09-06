@@ -12,27 +12,86 @@ const playlistInicial = [
 //    Canción a añadir: { titulo: "Imagine", artista: "John Lennon", duracion: 183 }
 console.log("\n1. Añadir canción al final:");
 // Escribe tu código aquí
+const playlistInicial = [
+    { titulo: "Bohemian Rhapsody", artista: "Queen", duracion: 355 },
+    { titulo: "Hotel California", artista: "Eagles", duracion: 391 },
+    { titulo: "Stairway to Heaven", artista: "Led Zeppelin", duracion: 482 },
+];
+
+console.log("\n1. Añadir canción al final:");
+console.log("Antes:", playlistInicial);
+
+playlistInicial.push({ titulo: "Imagine", artista: "John Lennon", duracion: 183 });
+
+console.log("Después:", playlistInicial);
 
 
 // 2. Eliminar la PRIMERA canción de la playlist.
 //    Utiliza un método mutable.
 console.log("\n2. Eliminar primera canción:");
 // Escribe tu código aquí
+const playlistInicial = [
+    { titulo: "Bohemian Rhapsody", artista: "Queen", duracion: 355 },
+    { titulo: "Hotel California", artista: "Eagles", duracion: 391 },
+    { titulo: "Stairway to Heaven", artista: "Led Zeppelin", duracion: 482 },
+];
 
+console.log("\n2. Eliminar primera canción:");
+console.log("Antes:", playlistInicial);
+
+playlistInicial.shift();
+
+console.log("Después:", playlistInicial);
 
 // 3. Crear una NUEVA playlist que contenga solo los títulos de las canciones.
 //    Utiliza un método inmutable. El arreglo original no debe cambiar.
 console.log("\n3. Crear playlist solo con títulos:");
 // Escribe tu código aquí
+const playlistInicial = [
+    { titulo: "Bohemian Rhapsody", artista: "Queen", duracion: 355 },
+    { titulo: "Hotel California", artista: "Eagles", duracion: 391 },
+    { titulo: "Stairway to Heaven", artista: "Led Zeppelin", duracion: 482 },
+];
 
+console.log("\n3. Crear playlist solo con títulos:");
+console.log("Arreglo original:", playlistInicial);
+
+const soloTitulos = playlistInicial.map(cancion => cancion.titulo);
+
+console.log("Nuevo arreglo con títulos:", soloTitulos);
+console.log("Arreglo original después:", playlistInicial);
 
 // 4. Crear una NUEVA playlist que contenga solo las canciones que duren más de 400 segundos.
 //    Utiliza un método inmutable.
 console.log("\n4. Crear playlist con canciones largas:");
 // Escribe tu código aquí
+const playlistInicial = [
+    { titulo: "Bohemian Rhapsody", artista: "Queen", duracion: 355 },
+    { titulo: "Hotel California", artista: "Eagles", duracion: 391 },
+    { titulo: "Stairway to Heaven", artista: "Led Zeppelin", duracion: 482 },
+];
 
+console.log("\n4. Crear playlist con canciones largas:");
+console.log("Arreglo original:", playlistInicial);
+
+const cancionesLargas = playlistInicial.filter(cancion => cancion.duracion > 400);
+
+console.log("Nuevo arreglo con canciones > 400s:", cancionesLargas);
+console.log("Arreglo original después:", playlistInicial);
 
 // 5. Encontrar la primera canción en la playlist que sea de "Eagles".
 //    Utiliza un método inmutable y muestra el objeto de la canción encontrada.
 console.log("\n5. Encontrar canción de Eagles:");
 // Escribe tu código aquí
+const playlistInicial = [
+    { titulo: "Bohemian Rhapsody", artista: "Queen", duracion: 355 },
+    { titulo: "Hotel California", artista: "Eagles", duracion: 391 },
+    { titulo: "Stairway to Heaven", artista: "Led Zeppelin", duracion: 482 },
+];
+
+console.log("\n5. Encontrar canción de Eagles:");
+
+const cancionEagles = playlistInicial.find(cancion => cancion.artista === "Eagles");
+
+console.log("Canción encontrada:", cancionEagles);
+console.log("Arreglo original después:", playlistInicial);
