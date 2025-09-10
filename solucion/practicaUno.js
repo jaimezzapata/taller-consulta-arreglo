@@ -1,38 +1,47 @@
-// Ejercicio de Aplicación Práctica: Gestión de una Playlist
-console.log("\n--- EJERCICIO DE APLICACIÓN: GESTIÓN DE PLAYLIST ---");
+// Investigación #1: Objeto Literal
 
-const playlistInicial = [
-    { titulo: "Bohemian Rhapsody", artista: "Queen", duracion: 355 },
-    { titulo: "Hotel California", artista: "Eagles", duracion: 391 },
-    { titulo: "Stairway to Heaven", artista: "Led Zeppelin", duracion: 482 },
-];
+// 1. Definición:
+// Un objeto literal en JavaScript es una forma directa de crear un objeto usando llaves {}.
+// Su propósito es agrupar datos relacionados bajo una misma entidad.
 
-// 1. Añadir una nueva canción al FINAL de la playlist.
-//    Utiliza un método mutable.
-//    Canción a añadir: { titulo: "Imagine", artista: "John Lennon", duracion: 183 }
-console.log("\n1. Añadir canción al final:");
-// Escribe tu código aquí
+const computador = {
+  marca: "Dell",
+  modelo: "XPS 13",
+  ramGB: 16,
+  tieneSSD: true,
+  puertos: ["USB-C", "HDMI", "Thunderbolt"],
+  procesador: {
+    marca: "Intel",
+    modelo: "i7-1250U",
+    nucleos: 10
+  }
+};
 
+// Investigación #2: Objeto por Constructor
 
-// 2. Eliminar la PRIMERA canción de la playlist.
-//    Utiliza un método mutable.
-console.log("\n2. Eliminar primera canción:");
-// Escribe tu código aquí
+// 1. Definición:
+// Un objeto por constructor se crea usando funciones o clases. A diferencia del objeto literal,
+// permite generar múltiples instancias con la misma estructura.
 
+// 2. Constructor con new Object()
+const computador2 = new Object();
+computador2.marca = "HP";
+computador2.modelo = "Envy";
+computador2.ramGB = 8;
+computador2.tieneSSD = false;
+computador2.puertos = ["USB-A", "Ethernet"];
+computador2.procesador = {
+  marca: "AMD",
+  modelo: "Ryzen 5",
+  nucleos: 6
+};
 
-// 3. Crear una NUEVA playlist que contenga solo los títulos de las canciones.
-//    Utiliza un método inmutable. El arreglo original no debe cambiar.
-console.log("\n3. Crear playlist solo con títulos:");
-// Escribe tu código aquí
+// 3. Constructor personalizado
+function Producto(nombre, precio, disponible) {
+  this.nombre = nombre;
+  this.precio = precio;
+  this.disponible = disponible;
+}
 
-
-// 4. Crear una NUEVA playlist que contenga solo las canciones que duren más de 400 segundos.
-//    Utiliza un método inmutable.
-console.log("\n4. Crear playlist con canciones largas:");
-// Escribe tu código aquí
-
-
-// 5. Encontrar la primera canción en la playlist que sea de "Eagles".
-//    Utiliza un método inmutable y muestra el objeto de la canción encontrada.
-console.log("\n5. Encontrar canción de Eagles:");
-// Escribe tu código aquí
+const producto1 = new Producto("Mouse inalámbrico", 29.99, true);
+const producto2 = new Producto("Monitor 24 pulgadas", 199.99, false);

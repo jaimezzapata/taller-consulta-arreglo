@@ -1,49 +1,47 @@
-// Taller de Investigación sobre Objetos en JavaScript
-// Nombre del estudiante: [Tu nombre completo aquí]
-
-// Parte 1: El Mundo de los Objetos
-
 // Investigación #1: Objeto Literal
-// 1. Define qué es un objeto literal en JavaScript.
-/**
- * Escribe tu explicación aquí:
- * Un objeto literal es...
- */
 
-// 2. Muestra la sintaxis básica para crear un objeto literal.
-// Escribe el código aquí
+// 1. Definición:
+// Un objeto literal en JavaScript es una forma directa de crear un objeto usando llaves {}.
+// Su propósito es agrupar datos relacionados bajo una misma entidad.
 
-// 3. Crea un objeto literal llamado `computador` con 5 propiedades.
-// Escribe el código aquí
-
-
-// Muestra el objeto `computador` en la consola.
-
+const computador = {
+  marca: "Dell",
+  modelo: "XPS 13",
+  ramGB: 16,
+  tieneSSD: true,
+  puertos: ["USB-C", "HDMI", "Thunderbolt"],
+  procesador: {
+    marca: "Intel",
+    modelo: "i7-1250U",
+    nucleos: 10
+  }
+};
 
 // Investigación #2: Objeto por Constructor
-// 1. Define qué es un objeto por constructor y su diferencia con el literal.
-/**
- * Escribe tu explicación aquí:
- * Un objeto por constructor es...
- */
 
-// 2. Crea un objeto utilizando el constructor `new Object()` y asígnale las mismas propiedades del objeto `computador`.
-// Escribe el código aquí
+// 1. Definición:
+// Un objeto por constructor se crea usando funciones o clases. A diferencia del objeto literal,
+// permite generar múltiples instancias con la misma estructura.
 
-// Asigna las propiedades aquí
+// 2. Constructor con new Object()
+const computador2 = new Object();
+computador2.marca = "HP";
+computador2.modelo = "Envy";
+computador2.ramGB = 8;
+computador2.tieneSSD = false;
+computador2.puertos = ["USB-A", "Ethernet"];
+computador2.procesador = {
+  marca: "AMD",
+  modelo: "Ryzen 5",
+  nucleos: 6
+};
 
+// 3. Constructor personalizado
+function Producto(nombre, precio, disponible) {
+  this.nombre = nombre;
+  this.precio = precio;
+  this.disponible = disponible;
+}
 
-// Muestra el objeto `computadorPorConstructor` en la consola.
-
-
-// 3. Crea una función constructora llamada `Producto` y crea dos instancias.
-// Escribe la función constructora aquí
-
-
-// Crea dos instancias de `Producto`
-// Escribe el código aquí
-
-
-// Muestra las instancias en la consola
-// console.log("Instancia 1 de Producto:", producto1);
-// console.log("Instancia 2 de Producto:", producto2);
+const producto1 = new Producto("Mouse inalámbrico", 29.99, true);
+const producto2 = new Producto("Monitor 24 pulgadas", 199.99, false);
