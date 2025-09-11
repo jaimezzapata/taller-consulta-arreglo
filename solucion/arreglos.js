@@ -56,7 +56,7 @@ const arreglo3 = ["dato 1", 2, true, 2.99]
 arreglo3.shift();
 console.log(arreglo3)
 
-// Método 4: unshift
+// Método 4: unshift()
 // Descripción: Agrega un nuevo elemento al principio del arreglo
 // Ejemplo:
 const arreglo4 = ["dato 1", 2, true, 2.99]
@@ -110,9 +110,10 @@ function checkAdult(age) {
 }
 console.log(arreglo8.filter(checkAdult))
 
-// Método 3: [Nombre del método]
-// Descripción: 
+// Método 3: find()
+// Descripción: El método devuelve el valor del primer elemento que pasa una prueba.
 // Ejemplo:
+
 
 const arreglo9 = [19, 25, 6, 2.99];
 
@@ -121,9 +122,75 @@ function checkAge(age) {
 }
 console.log(arreglo9.find(checkAge))
 
-// Método 4: [Nombre del método]
-// Descripción: 
+// Método 4: some()
+// Descripción: El método verifica si algún elemento de la matriz pasa una prueba (proporcionada como una función de devolución de llamada).
 // Ejemplo:
 
+const arreglo10 = [19, 25, 6, 2.99];
+console.log(arreglo10.some(checkAdult))
+function checkAdult(age) {
+  return age > 18;
+}
+
+// Método 5: findIndex()
+// Descripción: El método () ejecuta una función para cada elemento de la matriz y devuelve el índice (posición) del primer elemento que pasa una prueba.
+// Ejemplo:
+
+const arreglo11 = [19,25,6,2.99]
+
+arreglo11.findIndex(checkAge)
+
+function checkAge(age){
+    return age > 18;
+}
+
+console.log(arreglo11)
+
+// Método 6: indexOf()
+// Descripción: El método devuelve la posición de la primera aparición de un valor en una cadena.
+// Ejemplo:
+
+const arreglo12 = [19,"dato2",6,2.99];
+let arreglo12ejemplo = arreglo12.indexOf("dato2");
+console.log(arreglo12ejemplo)
+
+// Método 7: slice()
+// Descripción: Devuelve los elementos seleccionados en un nueva arreglo.
+// Ejemplo:
+
+const arreglo13 = ["dato 1", 2, true, 2.99];
+const arreglo13ej = arreglo13.slice(1,3);
+console.log(arreglo13ej);
+
+// Método 8: reduce()
+// Descripción: Ejecuta una función reductora para el elemento del arreglo.
+// Ejemplo:
+
+const arreglo14 = [19,25,6,2.99];
+
+function myFunc(total,num){
+    return total - num;
+}
+
+console.log(arreglo14.reduce(myFunc));
+
+//Método 9: forEach()
+//Descripción: Llama a la funcion para cada elemento en el arreglo
+//Ejemplo:
+
+const arreglo15 = ["dato 1", 2, true, 2.99]
+
+function myFunction() {
+    return Math.floor(Math.random() * 10);
+}
+
+arreglo15.forEach(myFunction)
 
 
+//Método 10: isArray()
+//Descripción: devuelve verdadero si un objeto es un arreglo, de lo contrario falso.
+//Ejemplo:
+
+const arreglo16 = ["dato 1", 2, true, 2.99]
+let arreglo16ej = Array.isArray(arreglo16);
+console.log(arreglo16ej)
